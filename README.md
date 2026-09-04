@@ -1,4 +1,4 @@
-# my-lib
+# burd-lib
 
 One-line description of what this library does.
 
