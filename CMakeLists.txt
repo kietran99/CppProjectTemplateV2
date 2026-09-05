@@ -13,35 +13,30 @@ option(LIB_HEADER_ONLY "Does this library contain only header files" OFF)
 if(LIB_HEADER_ONLY)
   set(lib_type INTERFACE)
   set(scope_keyword INTERFACE)
+  set(lib_sources "")
+  set(lib_definitions BURD_LIB_HEADER_ONLY)
 else()
   set(lib_type STATIC)
   set(scope_keyword PUBLIC)
+  set(lib_sources src/stub.cpp)
+  set(lib_definitions "")
 endif()
 
-add_library(burd-lib ${lib_type})
+add_library(burd-lib ${lib_type} ${lib_sources})
 
 target_compile_features(burd-lib
   ${scope_keyword}
     cxx_std_20
 )
 
-if(LIB_HEADER_ONLY)
-  target_compile_definitions(burd-lib
-    ${scope_keyword}
-      BURD_LIB_HEADER_ONLY
-  )
-endif()
+target_compile_definitions(burd-lib
+  ${scope_keyword}
+    ${lib_definitions}
+)
 
 target_include_directories(burd-lib
   ${scope_keyword}
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
-
-if(NOT LIB_HEADER_ONLY)
-  target_sources(burd-lib
-    PRIVATE
-      src/stub.cpp
-  )
-endif()
 
 add_library(burd::burd-lib ALIAS burd-lib)
