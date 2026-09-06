@@ -83,3 +83,6 @@ compile_commands.json
 # OS
 .DS_Store
 Thumbs.db
+
+# CodeGraph index (machine-local, rebuild with `codegraph init`)
+.codegraph/
