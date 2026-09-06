@@ -16,6 +16,7 @@
     {
       "name": "dev-debug",
       "inherits": "_base",
+      "toolchainFile": "${sourceDir}/build/Debug/generators/conan_toolchain.cmake",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
       }
@@ -23,6 +24,7 @@
     {
       "name": "dev-release",
       "inherits": "_base",
+      "toolchainFile": "${sourceDir}/build/Release/generators/conan_toolchain.cmake",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
       }

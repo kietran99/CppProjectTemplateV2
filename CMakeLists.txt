@@ -9,6 +9,7 @@ endif()
 project(burd-lib VERSION ${LIB_VERSION} LANGUAGES CXX)
 
 option(LIB_HEADER_ONLY "Does this library contain only header files" OFF)
+option(LIB_BUILD_TESTING "Build automated tests" ${PROJECT_IS_TOP_LEVEL})
 
 if(LIB_HEADER_ONLY)
   set(lib_type INTERFACE)
@@ -40,3 +41,8 @@ target_include_directories(burd-lib
 )
 
 add_library(burd::burd-lib ALIAS burd-lib)
+
+if(LIB_BUILD_TESTING)
+  enable_testing()
+  add_subdirectory(test)
+endif()
