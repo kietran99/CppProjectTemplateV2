@@ -3,8 +3,9 @@ import re
 
 from conan import ConanFile
 from conan.errors import ConanException
+from conan.tools.cmake import CMakeDeps, CMakeToolchain, cmake_layout
 from conan.tools.files import load
-from conan.tools.cmake import cmake_layout, CMakeDeps, CMakeToolchain
+
 
 class BurdRecipe(ConanFile):
     name = "burd-lib"
