@@ -1,0 +1,25 @@
+---
+BasedOnStyle: Microsoft
+Standard: Latest
+ColumnLimit: 120
+IndentWidth: 4
+TabWidth: 4
+AccessModifierOffset: -4
+AlignArrayOfStructures: Right
+AllowShortFunctionsOnASingleLine: InlineOnly
+BreakAfterReturnType: Automatic
+BreakBeforeBraces: Allman
+BreakBeforeTemplateCloser: true
+BreakConstructorInitializers: BeforeComma
+BreakInheritanceList: BeforeComma
+BreakTemplateDeclarations: Yes
+EmptyLineAfterAccessModifier: Always
+FixNamespaceComments: false
+InsertNewlineAtEOF: true
+KeepEmptyLines:
+  AtEndOfFile: true
+  AtStartOfBlock: false
+  AtStartOfFile: false
+Language: Cpp
+PointerAlignment: Left
+SeparateDefinitionBlocks: Always
