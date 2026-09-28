@@ -1,0 +1,12 @@
+---
+Checks: >
+  -*,
+  bugprone-*, performance-*, portability-*, misc-*, modernize-*, readability-*,
+  -modernize-use-trailing-return-type,
+  -readability-identifier-length,
+  -readability-use-concise-preprocessor-directives,
+  -portability-avoid-pragma-once,
+
+WarningsAsErrors: ''
+HeaderFilterRegex: 'burd-lib'
+FormatStyle: file
