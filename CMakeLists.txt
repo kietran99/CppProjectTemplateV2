@@ -8,6 +8,11 @@ endif()
 
 project(burd-lib VERSION ${LIB_VERSION} LANGUAGES CXX)
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+include(CompilerWarnings)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 option(LIB_HEADER_ONLY "Does this library contain only header files" OFF)
 option(LIB_BUILD_TESTING "Build automated tests" ${PROJECT_IS_TOP_LEVEL})
 
