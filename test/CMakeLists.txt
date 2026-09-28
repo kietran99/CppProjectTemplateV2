@@ -2,6 +2,8 @@ find_package(doctest REQUIRED)
 
 add_executable(burd-lib-tests stub.test.cpp)
 
+burd_set_warnings(burd-lib-tests)
+
 target_link_libraries(burd-lib-tests
   PRIVATE
     doctest::doctest
