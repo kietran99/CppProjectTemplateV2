@@ -16,6 +16,14 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 option(LIB_HEADER_ONLY "Does this library contain only header files" OFF)
 option(LIB_BUILD_TESTING "Build automated tests" ${PROJECT_IS_TOP_LEVEL})
 
+if(PROJECT_IS_TOP_LEVEL AND MSVC AND NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
+  message(FATAL_ERROR
+    "32-bit MSVC build detected (CMAKE_SIZEOF_VOID_P=${CMAKE_SIZEOF_VOID_P}). This project "
+    "supports 64-bit only.\n"
+    "Configure from an x64 shell (vcvars64.bat, or \"x64 Native Tools Command Prompt\"), "
+    "and delete this build directory first: option() values are cache-sticky.")
+endif()
+
 if(LIB_HEADER_ONLY)
   set(lib_type INTERFACE)
   set(scope_keyword INTERFACE)
